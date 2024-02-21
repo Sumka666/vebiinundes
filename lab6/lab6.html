@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .main0{
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+        .main1{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+        .main2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(31, 32, 32);
+        }
+        .main3{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(1, 17, 17, 0.027);
+        }
+        .main4{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(234, 0, 255, 0.767);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body  onmouseover="showCoords(event)" 
+    >
+
+    <p id="demo">Coordinates:</p>
+    <div  class="main0">
+    <div class="main1" >
+        <div class="main2">
+            <div class="main3">
+             <div class="main4"></div>
+            </div>
+        </div>
+    </div>
+    
+   
+    </div>
+    <script>
+        function showCoords(event) {
+          let x = event.clientX;
+          let y = event.clientY;
+          let text = "X coords: " + x + ", Y coords: " + y;
+          document.getElementById("demo").innerHTML = text;
+          let target = event.target;
+            let color = target.closest('div[class^="main"]').style.backgroundColor;
+            document.getElementById("demo").innerHTML = text;
+        }
+        
+       
+        </script>
+</body>
+</html>
