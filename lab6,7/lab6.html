@@ -34,24 +34,17 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <p id="dem"></p>
-    <script>
-    <!-- <body  onmouseover="showCoords(event)" 
-    >
-
+        <body  onmouseover="showCoords(event)" >
     <p id="demo">Coordinates:</p>
-    <div  class="main0">
-    <div class="main1" >
-        <div class="main2">
+    <div onclick="hi()"  class="main0">
+    <div  onmouseover="green()"  class="main1" >
+        <div ondblclick="hu()" class="main2">
             <div class="main3">
-             <div class="main4"></div>
+             <div onmouseenter="hp()" class="main4"></div>
             </div>
         </div>
     </div>
-    
-   
-    </div>
-    <script>
+    </div> <script>
         function showCoords(event) {
           let x = event.clientX;
           let y = event.clientY;
@@ -61,19 +54,18 @@
             let color = target.closest('div[class^="main"]').style.backgroundColor;
             document.getElementById("demo").innerHTML = text;
         }
-   
-       
-       
-        var x;
-        var user=prompt("utga")
-        if(user!=null&&user=="guest"){
-            x="hi\n"+user;
-            document.getElementById("dem").innerHTML=x;
+        function hi(){
+            document.getElementById("demo").style.color="blue"
         }
-        else{
-            x="buruu utga baina";
-            document.getElementById("dem").innerHTML=x;
+        function green(){
+            document.getElementById("demo").style.color="green"
         }
-        </script> -->
+        function hu(){
+            document.getElementById("demo").style.color="black"
+        }
+        function hp(){
+            document.getElementById("demo").style.color="blueviolet"
+        }
+        </script> 
 </body>
 </html>
