@@ -34,7 +34,9 @@
     <title>Document</title>
 </head>
 <body>
-    <body  onmouseover="showCoords(event)" 
+    <!-- <p id="dem"></p>
+    <script>
+    <!-- <body  onmouseover="showCoords(event)" 
     >
 
     <p id="demo">Coordinates:</p>
@@ -59,8 +61,19 @@
             let color = target.closest('div[class^="main"]').style.backgroundColor;
             document.getElementById("demo").innerHTML = text;
         }
-        
+   
        
-        </script>
+       
+        var x;
+        var user=prompt("utga")
+        if(user!=null&&user=="guest"){
+            x="hi\n"+user;
+            document.getElementById("dem").innerHTML=x;
+        }
+        else{
+            x="buruu utga baina";
+            document.getElementById("dem").innerHTML=x;
+        }
+        </script> -->
 </body>
 </html>
