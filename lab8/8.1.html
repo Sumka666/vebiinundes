@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <title>Document</title>
- <meta charset="utf-8"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
- <body>
-    <img height="250" id="image" src="1.jpg" width="400" /><br/>
+<body>
+    <img onmouseover="next()" height="200" id="image" src="1.jpg" width="400" /><br/> 
     <script>
         var i = 0;
         var path = new Array();
@@ -14,17 +14,14 @@
         path[1]="2.jpg"
         path[2]="3.jpg"
         path[3]="4.jpg"
-        function next()
-        { if(i<path.length-1)
+        function next(){
+         if(i<path.length-1)
         { i++;
         document.getElementById("image").src=path[i]; }
         else
         { i=0;
         document.getElementById("image").src=path[i]; }
         }
-        window.onload = function() {
-            setInterval(next, 500);
-        };
-    </script> 
+        </script> 
 </body>
 </html>
