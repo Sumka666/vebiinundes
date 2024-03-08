@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
  <title>Лаборатори 14 жишээ</title>
  <meta charset="utf-8"/>
  <script>
@@ -31,3 +32,32 @@
 <button onclick="call()">Start</button>
 <button onclick="clearInterval(time)">Stop</button>>
 </body></html>
+=======
+ <title>Document</title>
+ <meta charset="utf-8"/>
+
+</head>
+ <body>
+    <img height="250" id="image" src="1.jpg" width="400" /><br/>
+    <script>
+        var i = 0;
+        var path = new Array();
+        path[0] ="1.jpg"
+        path[1]="2.jpg"
+        path[2]="3.jpg"
+        path[3]="4.jpg"
+        function next()
+        { if(i<path.length-1)
+        { i++;
+        document.getElementById("image").src=path[i]; }
+        else
+        { i=0;
+        document.getElementById("image").src=path[i]; }
+        }
+        window.onload = function() {
+            setInterval(next, 500);
+        };
+    </script> 
+</body>
+</html>
+>>>>>>> 02db44eaa3b04f03f3c15f99b1bcce0d0668b5d8
