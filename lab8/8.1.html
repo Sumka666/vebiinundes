@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="z1.jpg" id="myImage" />
+    <button onclick="playOrPause()">Play</button>
+
+    <script>
+        var img = document.getElementById("myImage");
+        var playing = false;
+        var intervalId;
+        var currentImageIndex = 1; // Current index of the displayed image
+
+        function playOrPause() {
+            if (!playing) {
+                intervalId = setInterval(changeImage, 2000); // Change image every 2 seconds
+                playing = true;
+                document.querySelector("button").textContent = "Pause";
+            } else {
+                clearInterval(intervalId);
+                playing = false;
+                document.querySelector("button").textContent = "Play";
+            }
+        }
+
+        function changeImage() {
+            currentImageIndex++;
+            if (currentImageIndex > 10) {
+                currentImageIndex = 1;
+            }
+            img.src = "z" + currentImageIndex + ".jpg";
+        }
+    </script>
+</body>
+</html>
