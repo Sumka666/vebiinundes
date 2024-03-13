@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hi</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="Canvas" width="480" height="320"></canvas>
+  <script>
+    class Ball {
+  constructor(x, y, radius, speed, canvas, context) {
+    this.x = x; // x-coordinate of the ball
+    this.y = y; // y-coordinate of the ball
+    this.radius = radius; // radius of the ball
+    this.speed = speed; // speed of the ball
+    this.canvas = canvas; // reference to the canvas element
+    this.context = context; // 2D rendering context of the canvas
+    this.dx = speed; // horizontal velocity of the ball
+    this.dy = -speed; // vertical velocity of the ball
+  }
+
+  draw() {
+    this.context.beginPath();
+    this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.context.fillStyle = "red"; // color of the ball
+    this.context.fill();
+    this.context.closePath();
+  }
+
+  move() {
+    this.x += this.dx;
+    this.y += this.dy;
+
+    // Collision detection with walls
+    if (this.x + this.radius > this.canvas.width || this.x - this.radius < 0) {
+      this.dx = -this.dx;
+    }
+
+    if (this.y - this.radius < 0) {
+      this.dy = -this.dy;
+    }
+
+    // You can add more collision detection logic with other game objects here
+  }
+}
+  </script>
+</body>
+</html>
